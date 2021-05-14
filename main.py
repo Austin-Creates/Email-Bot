@@ -29,9 +29,9 @@ def get_info():
 def send_email(receiver, subject, message):
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
-    server.login('adongoaustin14@gmail.com', 'austin123fortoday')
+    server.login('Insert Email', 'Email password')
     email = EmailMessage()
-    email['From'] = 'adongoaustin14@gmail.com'
+    email['From'] = 'Insert Email'
     email['To'] = receiver
     email['Subject'] = subject
     email.set_content(message)
@@ -40,16 +40,14 @@ def send_email(receiver, subject, message):
 
 
 email_list = {
-    'jacob': 'jomondi813@gmail.com',
-    'father': 'gmakajuma@gmail.com',
-    'mother': 'mercywesonga.ouma@gmail.com',
-    'annmarie': 'annmarie.adongo@gmail.com',
-    'myself': 'austin.adongo@outlook.com',
+    'Father': 'father@gmail.com'
+    'Mother': 'mother@gmail.com'
+    'Sister': 'sister@gmail.com'
 }
 
 
 def get_email_info():
-    talk("Hello Austin! I am Swift your Email Assistant")
+    talk("Hello User! I am Swift your Email Assistant")
     talk('To Whom do you want to send an email??')
     name = get_info()
     receiver = email_list[name]
@@ -59,7 +57,7 @@ def get_email_info():
     talk('Tell me the text in your email')
     message = get_info()
     send_email(receiver, subject, message)
-    talk('Hey Austin. Your email is sent')
+    talk('Hey User. Your email is sent')
     talk('Do you want to send more email?')
     send_more = get_info()
     if 'yes' in send_more:
